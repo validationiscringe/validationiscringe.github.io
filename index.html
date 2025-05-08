@@ -1,79 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta property="og:title" content="Renshi ❁ Discord Spy & Roblox Executor" />
-<meta property="og:description" content="A Nossa Última Dança" />
-<meta property="og:image" content="https://cdn.discordapp.com/icons/1328458897446408226/41edbc88cc57a802390b99df381c1391.png" />
-<meta name="theme-color" content="#00000">
-  <title>Renshi.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="h6ut @ Discord" />
+  <meta property="og:description" content="♋ The Sun." />
+  <meta name="theme-color" content="#000000">
+  <title>This website gets worse every remake</title>
   <style>
-  	@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-  	* {
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+    * {
       outline: none !important;
-      box-shadow: none !important;
       -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
     }
     body {
       margin: 0;
       height: 100vh;
-      background-color: #000;
+      background-color: black;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: Inconsolata, sans-serif;
     }
-    h1 {
-    	font-family: Inconsolata, sans-serif;
-        font-weight: bold;
-        color: white;
-        margin: 0;
+    .wrapper {
+      width: 100%;
+      max-width: 430px;
+      padding: 16px;
     }
     h2 {
-    	font-family: Inconsolata, sans-serif;
-        background-color: white;
-        margin: 0;
-    }
-
-    #discord-button {
-      background-color: #5865F2; /* Burple */
+      background-color: black;
       color: white;
-      margin: 15px;
-      border: none;
+      margin: 0;
       padding: 10px 20px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: Inconsolata, sans-serif;
-      transition: background-color 0.3s;
+      text-align: center;
     }
-
-    #discord-button:hover {
-      background-color: #4752C4;
+    #lanyard {
+      text-align: center;
+    }
+    #lanyard img {
+      width: 100%;
+      height: auto;
+    }
+    #loading {
+      font-size: 14px;
+      color: #666;
+    }
+    #sx {
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-<h1>Renshi.</h1>
-<h2>Working in Progress</h2>
-  <a id="discord-button" href="https://discord.gg/5bvWMpx6QH" target="_blank">
-    <svg width="24" height="24" viewBox="0 0 127.14 96.36" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <g id="Layer_2" data-name="Layer 2">
-            <g id="Discord_Logos" data-name="Discord Logos">
-                <g id="Discord_Logo_-_Large_-_White" data-name="Discord Logo - Large - White">
-                    <path d="M107.7,8.26A105.16,105.16,0,0,0,81,1.5a73.26,73.26,0,0,0-2.48,5.15A98.05,98.05,0,0,0,47,6.65,72.65,72.65,0,0,0,44.56,1.5,105.09,105.09,0,0,0,17.81,8.26,111.9,111.9,0,0,0,1.5,85.65a105.82,105.82,0,0,0,31.69,10.67,77.94,77.94,0,0,0,6.72-10.88,69.5,69.5,0,0,1-11-5.26c.92-.66,1.82-1.36,2.69-2.09a72.63,72.63,0,0,0,62.92,0c.88.73,1.78,1.43,2.69,2.09a69.23,69.23,0,0,1-11,5.26,77.94,77.94,0,0,0,6.72,10.88A105.77,105.77,0,0,0,125.64,85.65,111.9,111.9,0,0,0,107.7,8.26ZM42.72,64.44c-6.5,0-11.78-5.94-11.78-13.27s5.25-13.27,11.78-13.27,11.88,6,11.78,13.27C54.5,58.49,49.32,64.44,42.72,64.44Zm41.7,0c-6.5,0-11.78-5.94-11.78-13.27s5.24-13.27,11.78-13.27,11.88,6,11.78,13.27C96.21,58.49,91,64.44,84.42,64.44Z"/>
-                </g>
-            </g>
-        </g>
-    </svg>
-    Discord
-  </a>
+  <div class="wrapper">
+    <div id="lanyard">
+      <div id="loading">Fetching Lanyard...</div>
+    </div>
+    <a href="https://ayanami.shop" id="sx" style="display: none;">See also: My Sister's Page</a>
+  </div>
+<script>
+  const container = document.getElementById("lanyard");
+  const loading = document.getElementById("loading");
+  const sx = document.getElementById("sx");
 
+  fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://lanyard.cnrad.dev/api/999896468850737226?theme=dark&borderRadius=0px&bg=000&showDisplayName=true&idleMessage=Take%20your%20Heart!"))
+    .then(res => res.ok ? res.json() : Promise.reject("Failed to load"))
+    .then(data => {
+      const base64Data = data.contents.trim();
+      const img = document.createElement("img");
+      img.src = base64Data;
+      img.alt = "Discord Status";
+
+      const link = document.createElement("a");
+      link.href = "https://discord.com/users/999896468850737226";
+      link.appendChild(img);
+
+      container.innerHTML = "";
+      container.appendChild(link);
+
+      sx.style.display = "inline";
+    })
+    .catch(err => {
+      console.error("Erro ao buscar o Lanyard:", err);
+      location.reload();
+    });
+</script>
 </body>
-      </html>
+</html>
